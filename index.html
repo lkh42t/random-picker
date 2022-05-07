@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Picker</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Roboto&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <a href="https://github.com/lkh42t/random-picker" id="gh-link">
+      <!-- https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png -->
+      <img src="img/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+    </a>
+
+    <h1 class="mdc-typography">Random Picker</h1>
+
+    <label
+      class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea"
+      data-mdc-auto-init="MDCTextField"
+    >
+      <span class="mdc-notched-outline">
+        <span class="mdc-notched-outline__leading"></span>
+        <span class="mdc-notched-outline__notch">
+          <span class="mdc-floating-label" id="candidates-label"
+            >Candidates</span
+          >
+        </span>
+        <span class="mdc-notched-outline__trailing"></span>
+      </span>
+      <textarea
+        class="mdc-text-field__input"
+        id="candidates"
+        cols="40"
+        rows="8"
+        required
+        aria-label="candidates-label"
+      ></textarea>
+    </label>
+
+    <label
+      class="mdc-text-field mdc-text-field--outlined"
+      data-mdc-auto-init="MDCTextField"
+    >
+      <span class="mdc-notched-outline">
+        <span class="mdc-notched-outline__leading"></span>
+        <span class="mdc-notched-outline__notch">
+          <span class="mdc-floating-label" id="n-of-pick-label"># of pick</span>
+        </span>
+        <span class="mdc-notched-outline__trailing"></span>
+      </span>
+      <input
+        type="number"
+        class="mdc-text-field__input"
+        id="n-of-pick"
+        min="1"
+        value="1"
+        required
+        aria-labelledby="n-of-pick-label"
+      />
+    </label>
+
+    <button
+      class="mdc-button mdc-button--outlined"
+      id="pick"
+      data-mdc-auto-init="MDCRipple"
+    >
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">Pick</span>
+    </button>
+
+    <ul class="mdc-list" id="picked"></ul>
+    <template id="picked-item-tmpl">
+      <li class="mdc-list-item">
+        <span class="mdc-list-item__ripple"></span>
+        <span class="mdc-list-item__text"></span>
+      </li>
+    </template>
+
+    <footer class="mdc-typography">
+      &copy; 2022 <a href="https://github.com/lkh42t">lkh42t</a>
+    </footer>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+      window.mdc.autoInit();
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
